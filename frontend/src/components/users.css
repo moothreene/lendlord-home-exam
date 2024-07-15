@@ -1,0 +1,44 @@
+.users{
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.users-table{
+  border-collapse: collapse;
+  width: 95%;
+  margin: auto;
+}
+
+.users-table tr{
+  height: 50px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.users-table tr:last-child{
+  border-bottom: none;
+}
+
+.users-table td{
+  text-align: center;
+  font-weight: bold;
+}
+
+.users-table .email, .users-table .manager{
+  font-weight: normal;
+}
+
+.create-user:hover{
+  box-shadow: #cccccc 0px 0px 7px;
+  color: blue;
+}
+
+.update-user:hover{
+  color: blue;
+}
+
+.delete-user:hover{
+  color: blue;
+}

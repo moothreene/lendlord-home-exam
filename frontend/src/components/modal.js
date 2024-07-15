@@ -2,15 +2,9 @@ import React, { useCallback, useEffect } from 'react';
 
 import './modal.css';
 
-function Modal({
-  closeModal,
-  displayModal,
-  id,
-  children
-}) {
-
+function Modal({ closeModal, displayModal, id, children }) {
   const handleKeyUp = useCallback(
-    e => {
+    (e) => {
       if (e.key === 'Escape') {
         closeModal();
       }
@@ -24,23 +18,32 @@ function Modal({
   }, [handleKeyUp]);
 
   const clickedOutside = () => {
-    closeModal()
+    closeModal();
   };
 
   const divStyle = {
-    display: displayModal ? 'block' : 'none'
+    display: displayModal ? 'block' : 'none',
   };
 
   return (
-    <div className="basic-modal" id={id} onClick={clickedOutside} style={divStyle}>
+    <div
+      className="basic-modal"
+      id={id}
+      onClick={clickedOutside}
+      style={divStyle}
+    >
       <div
         className={'basic-modal-content'}
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
-        
-          <button type="button" className="close" aria-label="Close" onClick={closeModal}>
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <button
+          type="button"
+          className="close"
+          aria-label="Close"
+          onClick={closeModal}
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
         {children}
       </div>
     </div>
